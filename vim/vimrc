@@ -1,24 +1,8 @@
 execute pathogen#infect()
 set nocompatible
 
-colo kolor
 filetype plugin indent on
 syntax on
-
-" Enable italic. Default: 1
-let g:kolor_italic=0
-
-" Enable bold. Default: 1
-let g:kolor_bold=1
-
-" Enable underline. Default: 0
-let g:kolor_underlined=1
-
-" Gray 'MatchParen' color. Default: 0
-let g:kolor_alternative_matchparen=0
-
-" White foreground 'MatchParen' color that might work better with some terminals. Default: 0
-let g:kolor_inverted_matchparen=0
 
 let g:netrw_liststyle=0
 let g:netrw_winsize=30
@@ -35,8 +19,8 @@ set incsearch
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-map <C-o> :e . <CR>
-" :vertical res 25 <CR>
+map <C-n> :e . <CR>
+autocmd BufEnter * silent! lcd %:p:h
 
 map <silent> <C-h> :call WinMove('h')<CR>
 map <silent> <C-j> :call WinMove('j')<CR>
@@ -62,3 +46,11 @@ let t:curwin = winnr()
 endfunction		
 
 let g:ycm_confirm_extra_conf = 0
+
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key=','
+
+
+
